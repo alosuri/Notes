@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Notes.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Notes.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Notes">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="400">
+      <SplitView.Pane>
+        <StackPanel Margin="5">
+         <TextBlock Text="Notes"
+                   FontSize="24"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+          <ScrollViewer>
+            <StackPanel>
+              <ListBox SelectionMode="Single" Margin="5" Padding="5" x:Name="filesListBox"/>
+            </StackPanel>
+          </ScrollViewer>
+        </StackPanel>
+      </SplitView.Pane>
+
+      <SplitView.Content>
+        <Grid RowDefinitions="30, *" Margin="4">
+          <TextBlock Grid.Row="0">Title</TextBlock>
+          <TextBox AcceptsReturn="True" TextWrapping="Wrap" Grid.Row="1" BorderThickness="0"/>
+        </Grid>
+      </SplitView.Content>
+    </SplitView>
+</Window>
