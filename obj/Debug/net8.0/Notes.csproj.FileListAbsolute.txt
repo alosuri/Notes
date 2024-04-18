@@ -129,3 +129,4 @@
 /home/alosuri/Documents/Programming/C#/Notes/obj/Debug/net8.0/Notes.csproj.CopyComplete
 /home/alosuri/Documents/Programming/C#/Notes/obj/Debug/net8.0/Notes.genruntimeconfig.cache
 /home/alosuri/Documents/Programming/C#/Notes/obj/Debug/net8.0/ref/Notes.dll
+/home/alosuri/Documents/Programming/C#/Notes/obj/Debug/net8.0/Notes.sourcelink.json

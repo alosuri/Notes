@@ -11,8 +11,9 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        string?[] pdfFiles = Directory.GetFiles("/home/alosuri/Documents/Notes/", "*.note").Select(Path.GetFileNameWithoutExtension).ToArray();
-        filesListBox.ItemsSource = pdfFiles 
+        string?[] files = Directory.GetFiles("/home/alosuri/Documents/Notes/", "*.note").Select(Path.GetFileNameWithoutExtension).ToArray();
+        filesBox.ItemsSource = files 
             .OrderBy(x => x);
     }
+
 }

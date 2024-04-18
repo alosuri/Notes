@@ -22,7 +22,7 @@
                    HorizontalAlignment="Center"/>
           <ScrollViewer>
             <StackPanel>
-              <ListBox SelectionMode="Single" Margin="5" Padding="5" x:Name="filesListBox"/>
+              <ListBox x:Name="filesBox" Selection="{Binding Selection}" SelectionMode="Single" Margin="5" Padding="5" Height="700" />
             </StackPanel>
           </ScrollViewer>
         </StackPanel>
@@ -31,7 +31,14 @@
       <SplitView.Content>
         <Grid RowDefinitions="30, *" Margin="4">
           <TextBlock Grid.Row="0">Title</TextBlock>
-          <TextBox AcceptsReturn="True" TextWrapping="Wrap" Grid.Row="1" BorderThickness="0"/>
+            <TextBox Text="{Binding FileContent}" Watermark="Put your text here..." Margin="10" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap" Grid.Row="1" BorderThickness="0">
+            <TextBox.ContextMenu>
+              <ContextMenu>
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+              </ContextMenu>
+            </TextBox.ContextMenu> 
+          </TextBox>
         </Grid>
       </SplitView.Content>
     </SplitView>
